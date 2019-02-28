@@ -8,15 +8,11 @@ Siga las instrucciones para poder correr el proyecto en su maquina local.
 
 ### Prerrequisitos de Instalación 
 
-```
-NPM debe estar instalado. Para instalar NPM [Vea aquí](https://www.npmjs.com/get-npm)
-```
-```
-se debe tener instalado Node. Para instalar Node [Vea aquí](https://howtonode.org/how-to-install-nodejs)
-```
-```
+NPM debe estar instalado. Para instalar NPM. [Vea aquí](https://www.npmjs.com/get-npm)
+
+Se debe tener instalado Node. Para instalar Node [Vea aquí](https://howtonode.org/how-to-install-nodejs)
+
 Angular y Angular CLI deben estar instalados. Para instalarlos [Vea aquí](https://victorroblesweb.es/2018/05/23/instalar-angular-6-con-angular-cli/)
-```
 
 
 ### Despliegue en el servidor
