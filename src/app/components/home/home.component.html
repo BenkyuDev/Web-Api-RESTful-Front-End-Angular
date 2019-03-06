@@ -1,26 +1,8 @@
-<div class="container">
+<div class="container" *ngFor="let moneda of monedas | async ">
     <div class="card" style="width: 18rem;">
-        <h1>Dolar</h1>
+        <h1>{{ moneda.moneda }}</h1>
         <div class="card-body">
-            <h5 class="card-title">{{ dolar.moneda }}</h5>
-            <p class="card-text">$ {{ dolar.precio }}</p>
-
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <h1>Euro</h1>
-        <div class="card-body">
-            <h5 class="card-title">{{ euro.moneda }}</h5>
-            <p class="card-text">$ {{ euro.precio }}</p>
-
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <h1>Real</h1>
-        <div class="card-body">
-            <h5 class="card-title">{{ real.moneda }}</h5>
-            <p class="card-text">$ {{ real.precio }}</p>
-
+            <h5 class="card-title">$ {{ moneda.precio }}</h5>
         </div>
     </div>
 

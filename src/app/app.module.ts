@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+//servicios
+import {MonedasService} from './services/monedas.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MonedasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

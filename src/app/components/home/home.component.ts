@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import {MonedasService, Moneda} from '../../services/monedas.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,42 +9,21 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class HomeComponent implements OnInit {
-dolar;
-euro;
-real;
-
-  constructor(private http: HttpClient ) {
+monedas: Observable<Moneda[]>;
+  constructor(private http: HttpClient, private _monedasService: MonedasService ) {
+    console.log('constructor');
+    setInterval(() => {
+      this.monedas = this._monedasService.getMonedas();
+      console.log(this.monedas);
+      }, 5000);
   }
 
-  ngOnInit() {
-    this.http.get('http://localhost:8001/COTIZACION/dolar').subscribe( (resp: any) => {
-      this.dolar = resp;
-    });
+  ngOnInit(): void {
+    this.monedas = this._monedasService.getMonedas();
+    console.log(this.monedas);
 
-    setInterval(() => {
-      this.http.get('http://localhost:8001/COTIZACION/dolar').subscribe( (resp: any) => {
-        this.dolar = resp;
-    });
-     }, 5000);
+     
 
-    this.http.get('http://localhost:8001/COTIZACION/euro').subscribe( (resp: any) => {
-      this.euro = resp;
-    });
-
-    setInterval(() => {
-      this.http.get('http://localhost:8001/COTIZACION/euro').subscribe( (resp: any) => {
-        this.euro = resp;
-      });
-    }, 5000);
-
-    this.http.get('http://localhost:8001/COTIZACION/real').subscribe( (resp: any) => {
-      this.real = resp;
-    });
-    setInterval(() => {
-      this.http.get('http://localhost:8001/COTIZACION/real').subscribe( (resp: any) => {
-        this.real = resp;
-    });
-    }, 5000);
   }
 
 }
